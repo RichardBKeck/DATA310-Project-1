@@ -151,9 +151,10 @@ Running this code 1,000 showed that starting towards Nashville minimized the ave
 ### Question Three
 Question Three asked the following:
 ```markdown
-Simulate a population of 20000 individuals from a beta distribution that has the parametrization a=1.6 and b=2.1. Select
-400 simple random samples of size 32 from this population and show that the sample means are normally distributed by 
-using histograms, distributional plots, Quantile-Quantile plots and normality tests
+Simulate a population of 20000 individuals from a beta distribution that has the parametrization
+a=1.6 and b=2.1. Select400 simple random samples of size 32 from this population and show that 
+the sample means are normally distributed by using histograms, distributional plots, 
+Quantile-Quantile plots and normality tests
 ```
 The first step with is question is to generate the Beta Distribution. Then, using that distribution, the mean of 400 random samples of 32 will be taken. from there, the mean will be used to generate a histogram, a distributional plot, and Quantile-Quantile plot, and ran through the Kolomogorov-Smirnov Test and the Anderson-Darling Test.
 The following code accomplishes all of those steps.
