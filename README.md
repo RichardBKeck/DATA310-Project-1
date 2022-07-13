@@ -19,7 +19,7 @@ This question gives you the following information:
 ```math
 1/2*1/2*3/4*3/4 = 9/64
 ```
-I approached this question using a Monte Carlo Simulation written in Python
+I approached this question using a Monte Carlo simulation.
 
 ```Python
 friend_a = ['truth','lie']
@@ -50,6 +50,81 @@ However, the question asks for the probability that it is raining, meaning that 
 ### Question Two
 Question Two asked the following:
 ```markdown
-Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over the routes shown in the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading out of Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. Should Mad Max start toward Atlanta or Nashville?
-```
+Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over the routes shown 
+in the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading 
+out of Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. 
+Should Mad Max start toward Atlanta or Nashville?
+'''
+|       Route             | Length of Route (Miles) |
+| ------------------------| ----------------------- |
+| New York - Atlanta      |          866            |
+| New York - Nashville    |          900            |
+| Nashville - St. Louis   |          309            |
+| Nashville - New Orleans |          532            |
+| Atlanta - St. Louis     |          555            |
+| Atlanta - New Orleans   |          470            |
+| St. Louis - Dallas      |          662            |
+| New Orleans - Dallas    |          505            |
+
+I approached this question using a Monte Carlo simulation.
+```Python
+WW_Atlanta = ['St. Louis','New Orleans']
+WW_Nashville = ['St. Louis','New Orleans']
+
+dist = {'ny-atl': 866,
+        'ny-nas':900,
+        'nas-stl':309,
+        'nas-new':542,
+        'atl-stl':555,
+        'atl-new':470,
+        'stl-dal':662,
+        'new-dal':505}
+def MadMax(trials):
+  Atlanta_Dist = 0
+  Nashville_Dist = 0
+  atl_graph = []
+  nas_graph = []
+  for i in range(trials):
+    Atlanta_Choice = np.random.choice(WW_Atlanta,replace=True)
+    if Atlanta_Choice == 'St. Louis':
+      travel = (dist['ny-atl']+dist['atl-new']+dist['new-dal'])
+      Atlanta_Dist += travel
+    else:
+      travel2 = (dist['ny-atl']+dist['atl-stl']+dist['stl-dal'])
+      Atlanta_Dist += travel2
+    Nashville_Choice = np.random.choice(WW_Nashville,replace=True)
+    if Nashville_Choice == 'St. Louis':
+      travel = (dist['ny-nas']+dist['nas-new']+dist['new-dal'])
+      Nashville_Dist += travel
+    else:
+      travel = (dist['ny-nas']+dist['nas-stl']+dist['stl-dal'])
+      Nashville_Dist += travel
+    
+
+    atl_graph.append(Atlanta_Dist/(i+1))
+    nas_graph.append(Nashville_Dist/(i+1))
+  plt.plot(atl_graph, label='Atlanta')
+  plt.plot(nas_graph, label='Nashville')
+  plt.tick_params(axis='x', colors='navy')
+  plt.tick_params(axis='y', colors='navy')
+  plt.xlabel('Repetitions of Experiment',fontsize=14,color='green')
+  plt.ylabel('Experimental Probability',fontsize=14,color='green')
+  plt.legend()
+  plt.show()
+
+  avg_dist_atl = Atlanta_Dist/trials
+  avg_dist_nas = Nashville_Dist/trials
+
+  #Outputs
+  print('Number of Trials: '+str(trials))
+  print('Average Distance When Starting towards Atlanta: '+ str(avg_dist_atl)+' miles')
+  print ('Average Distance When Starting towards Nashville: '+ str(avg_dist_nas)+' miles')
+
+  if avg_dist_atl < avg_dist_nas:
+    print('Mad Max should start towards Atlanta')
+  elif avg_dist_atl > avg_dist_nas:
+    print ('Mad Max should start towards Nashville')
+  else:
+    print ('A tie exists')
+    ```
 
