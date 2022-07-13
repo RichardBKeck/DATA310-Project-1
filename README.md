@@ -6,10 +6,10 @@ The project consisted of three programming assignments. In addition to the READM
 ### Question One
 Question One asked the following:
 ```markdown
-You're about to get on a plane to Boston. You want to know whether it is raining. You call 4 random friends of 
-yours who live there and ask each one independently, if it's raining. The first two of your friends have a 1/2
-chance of telling you the truth and, the other two have 1/4 chance of messing with you by lying. All 4 friends
-tell you that "No" it isn't raining. What is the probability that it's raining in Boston?
+You're about to get on a plane to Boston. You want to know whether it is raining. You call 4 random friends of yours 
+who live there and ask each one independently, if it's raining. The first two of your friends have a 1/2 chance of 
+telling you the truth and, the other two have 1/4 chance of messing with you by lying. All 4 friends tell you that 
+"No" it isn't raining. What is the probability that it's raining in Boston?
 ```
 This question gives you the following information:
 - Two of your friends have a 50% chance of lying to you and two of your friends have a 25% chance of lying to you. These friends will be called "Friend A" and "Friend B" respectively.
@@ -51,11 +51,12 @@ However, the question asks for the probability that it is raining, meaning that 
 
 ### Question Two
 Question Two asked the following:
+
 ```markdown
-Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over the routes shown 
-in the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading 
-out of Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. 
-Should Mad Max start toward Atlanta or Nashville?
+Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over the routes shown in 
+the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading out of 
+Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. Should Mad Max 
+start toward Atlanta or Nashville?
 ```
 |       Route             | Length of Route (Miles) |
 | ------------------------| ----------------------- |
@@ -144,7 +145,9 @@ Running this code 1,000 showed that starting towards Nashville minimized the ave
 ### Question Three
 Question Three asked the following:
 ```markdown
-Simulate a population of 20000 individuals from a beta distribution that has the parametrization a=1.6 and b=2.1. Select 400 simple random samples of size 32 from this population and show that the sample means are normally distributed by using histograms, distributional plots, Quantile-Quantile plots and normality tests
+Simulate a population of 20000 individuals from a beta distribution that has the parametrization a=1.6 and b=2.1. Select
+400 simple random samples of size 32 from this population and show that the sample means are normally distributed by 
+using histograms, distributional plots, Quantile-Quantile plots and normality tests
 ```
 The first step with is question is to generate the Beta Distribution. Then, using that distribution, the mean of 400 random samples of 32 will be taken. from there, the mean will be used to generate a histogram, a distributional plot, and Quantile-Quantile plot, and ran through the Kolomogorov-Smirnov Test and the Anderson-Darling Test.
 The following code accomplishes all of those steps.
@@ -155,11 +158,12 @@ import numpy as np
 from scipy import stats
 from scipy.stats import beta
 from scipy.stats import norm
-import statsmodels.api as s
+import statsmodels.api as sm
 import seaborn as sns
 sns.set(color_codes=True)
-import statsmodels.api as sm
 CDF = norm.cdf
+import warnings
+warnings.simplefilter(action='ignore')
 
 # Functions
 def zscore(x):
