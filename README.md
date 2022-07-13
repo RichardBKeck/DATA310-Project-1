@@ -5,8 +5,6 @@ The project consisted of three programming assignments. In addition to the READM
 
 ### Question One
 Question One asked the following:
- 
-
 ```markdown
 You're about to get on a plane to Boston. You want to know whether it is raining. You call 4 random friends of 
 yours who live there and ask each one independently, if it's raining. The first two of your friends have a 1/2
@@ -45,5 +43,13 @@ def Boston_rain (trials):
   print('Therefore, the probability that your friends all told the truth is', str(prob_truth))
   print('Since all your friends answered "No", and probability that at least one lied is',str(prob_lie), 
   "the chance that it's raining in Boston is",str(prob_lie))
+```
+Running this code for 1,000,000 trials resulted in all four friends telling the truth in 141,040 times. The probability of all four friends telling the truth (and therefore it not raining in Boston) is 0.14104. This value similar to the 9/64 value estimated above.
+However, the question asks for the probability that it is raining, meaning that at least one friend. In the remaining 858,960 simulations, at least one friend lied, meaning that the probability of it raining in Boston is 0.85896. This value is similar to 55/64, the complement of the estimated probability.
+
+### Question Two
+Question Two asked the following:
+```markdown
+Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over the routes shown in the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading out of Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. Should Mad Max start toward Atlanta or Nashville?
 ```
 
