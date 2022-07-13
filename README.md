@@ -20,7 +20,10 @@ This question gives you the following information:
 ```math
 1/2*1/2*3/4*3/4 = 9/64
 ```
-As such, the probability that at least one friend is lying to you is ```math 55/64```
+As such, the probability that at least one friend is lying to you is:
+```math 
+55/64
+```
 
 I approached this question using a Monte Carlo simulation.
 
