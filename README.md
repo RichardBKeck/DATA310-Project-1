@@ -54,10 +54,10 @@ However, the question asks for the probability that it is raining, meaning that 
 Question Two asked the following:
 
 ```markdown
-Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over the routes shown in 
-the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading out of 
-Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. Should Mad Max 
-start toward Atlanta or Nashville?
+Mad Max wants to travel from New York to Dallas by the shortest possible route. He may travel over 
+the routes shown in the table below. Unfortunately, the Wicked Witch can block one road leading out
+of Atlanta and one road leading out of Nashville. Mad Max will not know which roads have been blocked
+until he arrives at Atlanta or Nashville. Should Mad Max start toward Atlanta or Nashville?
 ```
 |       Route             | Length of Route (Miles) |
 | ------------------------| ----------------------- |
