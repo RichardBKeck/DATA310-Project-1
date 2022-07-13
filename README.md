@@ -215,13 +215,14 @@ print('Kolomogorov-Smirnov Test:',KMT)
 print('Anderson-Darling Test:',ADT)
 ```
 Running this code resulted in the following graphs:
-### Histogram
+
+***Histogram***
 ![image](https://user-images.githubusercontent.com/109169036/178628198-b203b7ed-6a95-415e-bd5c-ca474b847275.png)
 
-### Distributional Plot
+***Distributional Plot***
 ![image](https://user-images.githubusercontent.com/109169036/178628266-4484a72d-72ab-45e3-8d4f-446aaea59f9c.png)
 
-### Quantile-Quantile Plot
+***Quantile-Quantile Plot***
 ![image](https://user-images.githubusercontent.com/109169036/178630579-bcdbfce8-fa6a-4151-abc1-001536914240.png)
 
 These plots, combined with the results from the Kolomogorov-Smirnov Test and the Andseron-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
