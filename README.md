@@ -176,7 +176,6 @@ warnings.simplefilter(action='ignore')
 def zscore(x):
   return(x-np.mean(x))/np.std(x)
 
-
 # Generate the Beta Distribution
 beta_data = beta.rvs(a=1.6,b=2.1,size=20000)
 
@@ -232,18 +231,28 @@ ADT = stats.anderson(zscore(values),'norm')
 print('Kolomogorov-Smirnov Test:',KMT)
 print('Anderson-Darling Test:',ADT)
 ```
-Running this code resulted in the following graphs:
+Running this code results in similar graphs to the following:
 
 ***Histogram***
-![image](https://user-images.githubusercontent.com/109169036/178628198-b203b7ed-6a95-415e-bd5c-ca474b847275.png)
+
+![image](https://user-images.githubusercontent.com/109169036/178856024-c82d2b9e-800f-4754-929b-87536fea255a.png)
 
 ***Distributional Plot***
-![image](https://user-images.githubusercontent.com/109169036/178628266-4484a72d-72ab-45e3-8d4f-446aaea59f9c.png)
+
+![image](https://user-images.githubusercontent.com/109169036/178856062-108b3d4c-1c72-441b-9dee-ff8ae93e7b35.png)
 
 ***Quantile-Quantile Plot***
-![image](https://user-images.githubusercontent.com/109169036/178630579-bcdbfce8-fa6a-4151-abc1-001536914240.png)
 
-These plots, combined with the results from the Kolomogorov-Smirnov Test and the Anderson-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
+![image](https://user-images.githubusercontent.com/109169036/178856079-8dab4dca-85ae-4c94-a2ba-f935cc502227.png)
+
+Applying to the Kolmogorov-Smirnov Test and the Anderson-Darling Test gave the following outputs:
+
+```markdown
+Kolomogorov-Smirnov Test: KstestResult(statistic=0.0175595079941524, pvalue=0.9995123788566481)
+Anderson-Darling Test: AndersonResult(statistic=0.12092389381120938, critical_values=array([0.57 , 0.65 , 0.779, 0.909, 1.081]), significance_level=array([15. , 10. ,  5. ,  2.5,  1. ]))
+```
+
+As a whole, the plots and the results from the Kolomogorov-Smirnov Test and the Anderson-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
 
 The following block of code was used for all questions that involved a graph:
 
