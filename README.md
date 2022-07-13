@@ -83,7 +83,7 @@ WW_Nashville = ['St. Louis','New Orleans']
 dist = {'ny-atl': 866,
         'ny-nas':900,
         'nas-stl':309,
-        'nas-new':542,
+        'nas-new':532,
         'atl-stl':555,
         'atl-new':470,
         'stl-dal':662,
