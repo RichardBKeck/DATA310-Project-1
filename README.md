@@ -76,6 +76,7 @@ I approached this question using a Monte Carlo simulation where the Wicked Witch
 
 ```Python
 import numpy as np
+import matplotlib.pyplot as plt
 
 WW_Atlanta = ['St. Louis','New Orleans']
 WW_Nashville = ['St. Louis','New Orleans']
