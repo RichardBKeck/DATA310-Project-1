@@ -151,7 +151,9 @@ from scipy import stats
 from scipy.stats import beta
 from scipy.stats import norm
 import statsmodels.api as s
+import seaborn as sns
 sns.set(color_codes=True)
+import statsmodels.api as sm
 CDF = norm.cdf
 
 # Functions
