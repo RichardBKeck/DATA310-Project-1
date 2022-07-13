@@ -68,7 +68,10 @@ Should Mad Max start toward Atlanta or Nashville?
 | St. Louis - Dallas      |          662            |
 | New Orleans - Dallas    |          505            |
 
-I approached this question using a Monte Carlo simulation.
+This diagram visualizes the possible routes between New York and Dallas
+![image](https://user-images.githubusercontent.com/109169036/178830749-c2168d31-f56f-47b7-85eb-b5a02b9a017f.png)
+
+I approached this question using a Monte Carlo simulation where the Wicked Witch selects one road to block out of Atlanta and one road to block out of Nashville. These random selection inform two conditional statements which select the unblocked road and add the distance of that route to a counter outside of the loop. After the loop runs for all the range of the input value, the average distance for Mad Max is computed based on the initial choice. Using that average, the initial decision with the lowest average distance is identified as the best option.
 
 ```Python
 import numpy as np
