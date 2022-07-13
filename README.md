@@ -22,6 +22,8 @@ This question gives you the following information:
 I approached this question using a Monte Carlo simulation.
 
 ```Python
+import numpy as np
+
 friend_a = ['truth','lie']
 friend_b = ['truth','truth','truth','lie']
 def Boston_rain (trials):
@@ -69,6 +71,8 @@ Should Mad Max start toward Atlanta or Nashville?
 I approached this question using a Monte Carlo simulation.
 
 ```Python
+import numpy as np
+
 WW_Atlanta = ['St. Louis','New Orleans']
 WW_Nashville = ['St. Louis','New Orleans']
 
@@ -129,6 +133,107 @@ def MadMax(trials):
     print ('A tie exists')
 ```
 
-Running this code 200,000 showed that starting towards Nashville minimized the average distance that MadMax had to travel. The following graph visualizes this conclusion:
+Running this code 200,000 showed that starting towards Nashville minimized the average distance that Mad Max had to travel. The following graph visualizes this conclusion:
 ![image](https://user-images.githubusercontent.com/109169036/178625578-9229e48e-7e0f-4252-bdbd-a21e14ba8135.png)
 
+### Question Three
+Question Three asked the following:
+```markdown
+Simulate a population of 20000 individuals from a beta distribution that has the parametrization a=1.6 and b=2.1. Select 400 simple random samples of size 32 from this population and show that the sample means are normally distributed by using histograms, distributional plots, Quantile-Quantile plots and normality tests
+```
+The first step with is question is to generate the Beta Distribution. Then, using that distribution, the mean of 400 random samples of 32 will be taken. from there, the mean will be used to generate a histogram, a distributional plot, and Quantile-Quantile plot, and ran through the Kolomogorov-Smirnov Test and the Anderson-Darling Test.
+The following code accomplishes all of those steps.
+
+```Python
+# Inputs
+import numpy as np
+from scipy import stats
+from scipy.stats import beta
+from scipy.stats import norm
+import statsmodels.api as s
+sns.set(color_codes=True)
+CDF = norm.cdf
+
+# Functions
+def zscore(x):
+  return(x-np.mean(x))/np.std(x)
+
+
+# Generate the Beta Distribution
+beta_data = beta.rvs(a=1.6,b=2.1,size=20000)
+
+#Generate the random samples and the means
+trials=400
+values = []
+
+for i in range(trials):
+  test = np.random.choice(beta_data,size=32,replace= False ,p=None)
+  values.append(np.mean(test))
+
+#Generate the Histogram
+print('Histogram')
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+ax1 = sns.histplot(values,
+                  kde=False,
+                  color='lightpink')
+ax1.set(xlabel='Normal', ylabel='Frequency')
+plt.show()
+
+#Generate the Distributional Plot
+print('Distributional Plot')
+ax2 = sns.distplot(values,
+                  kde=False,
+                  color='deepskyblue',
+                  hist_kws={"color":'lightpink'},
+                  fit=stats.norm,
+                  fit_kws={"color":'deepskyblue'})
+ax2.set(xlabel='Normal', ylabel='Frequency')
+plt.show()
+
+#Generate the Quantile-Quantile plots
+print('Quantile-Quantile Plots')
+
+sm.qqplot((values-np.mean(values))/np.std(values), loc = 0, scale = 1, line='s',alpha=0.5)
+plt.xlim([-3,3])
+plt.ylim([-3,3])
+plt.axes().set_aspect('equal')
+plt.grid(b=True,which='major', color ='grey', linestyle='-', alpha=0.5)
+plt.grid(b=True,which='minor', color ='grey', linestyle='--', alpha=0.15)
+plt.minorticks_on()
+plt.show()
+
+#Conduct the Normality Tests
+#Kolmogorov-Smirnov Test
+KMT = stats.kstest(zscore(values),'norm')
+#Anderson-Darling Test
+ADT = stats.anderson(zscore(values),'norm')
+
+#Outputs
+print('Kolomogorov-Smirnov Test:',KMT)
+print('Anderson-Darling Test:',ADT)
+```
+Running this code resulted in the following graphs:
+### Histogram
+![image](https://user-images.githubusercontent.com/109169036/178628198-b203b7ed-6a95-415e-bd5c-ca474b847275.png)
+
+### Distributional Plot
+![image](https://user-images.githubusercontent.com/109169036/178628266-4484a72d-72ab-45e3-8d4f-446aaea59f9c.png)
+
+### Quantile-Quantile Plot
+![image](https://user-images.githubusercontent.com/109169036/178630579-bcdbfce8-fa6a-4151-abc1-001536914240.png)
+
+These plots, combined with the results from the Kolomogorov-Smirnov Test and the Andseron-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
+
+The following block of code was used for all questions that involved a graph:
+
+```Python
+# this is for displaying plots with high resolution
+#@title
+%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['figure.dpi'] = 120
+```
