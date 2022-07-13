@@ -127,7 +127,8 @@ def MadMax(trials):
     print ('Mad Max should start towards Nashville')
   else:
     print ('A tie exists')
-    ```
+```
+
 Running this code 200,000 showed that starting towards Nashville minimized the average distance that MadMax had to travel. The following graph visualizes this conclusion:
 ![image](https://user-images.githubusercontent.com/109169036/178625578-9229e48e-7e0f-4252-bdbd-a21e14ba8135.png)
 
