@@ -54,7 +54,7 @@ Mad Max wants to travel from New York to Dallas by the shortest possible route. 
 in the table below. Unfortunately, the Wicked Witch can block one road leading out of Atlanta and one road leading 
 out of Nashville. Mad Max will not know which roads have been blocked until he arrives at Atlanta or Nashville. 
 Should Mad Max start toward Atlanta or Nashville?
-'''
+```
 |       Route             | Length of Route (Miles) |
 | ------------------------| ----------------------- |
 | New York - Atlanta      |          866            |
@@ -67,6 +67,7 @@ Should Mad Max start toward Atlanta or Nashville?
 | New Orleans - Dallas    |          505            |
 
 I approached this question using a Monte Carlo simulation.
+
 ```Python
 WW_Atlanta = ['St. Louis','New Orleans']
 WW_Nashville = ['St. Louis','New Orleans']
@@ -127,4 +128,6 @@ def MadMax(trials):
   else:
     print ('A tie exists')
     ```
+Running this code 200,000 showed that starting towards Nashville minimized the average distance that MadMax had to travel. The following graph visualizes this conclusion:
+![image](https://user-images.githubusercontent.com/109169036/178625578-9229e48e-7e0f-4252-bdbd-a21e14ba8135.png)
 
