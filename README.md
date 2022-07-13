@@ -43,6 +43,7 @@ def Boston_rain (trials):
   print('Number of Trials: '+str(trials))
   print ('All four of your friends told the truth',str(all_four_truth),'times')
   print('Therefore, the probability that your friends all told the truth is', str(prob_truth))
-  print('Since all your friends answered "No", and probability that at least one lied is',str(prob_lie), "the chance that it's raining in Boston is",str(prob_lie))
+  print('Since all your friends answered "No", and probability that at least one lied is',str(prob_lie), 
+  "the chance that it's raining in Boston is",str(prob_lie))
 ```
 
