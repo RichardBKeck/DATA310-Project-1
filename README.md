@@ -243,7 +243,7 @@ Running this code resulted in the following graphs:
 ***Quantile-Quantile Plot***
 ![image](https://user-images.githubusercontent.com/109169036/178630579-bcdbfce8-fa6a-4151-abc1-001536914240.png)
 
-These plots, combined with the results from the Kolomogorov-Smirnov Test and the Andseron-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
+These plots, combined with the results from the Kolomogorov-Smirnov Test and the Anderson-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
 
 The following block of code was used for all questions that involved a graph:
 
