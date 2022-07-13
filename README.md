@@ -137,8 +137,8 @@ def MadMax(trials):
     print ('A tie exists')
 ```
 
-Running this code 200,000 showed that starting towards Nashville minimized the average distance that Mad Max had to travel. The following graph visualizes this conclusion:
-![image](https://user-images.githubusercontent.com/109169036/178625578-9229e48e-7e0f-4252-bdbd-a21e14ba8135.png)
+Running this code 1,000 showed that starting towards Nashville minimized the average distance that Mad Max had to travel. The following graph visualizes this conclusion:
+![image](https://user-images.githubusercontent.com/109169036/178846992-1e5d3232-2cf4-4d43-907b-b653ab2527c8.png)
 
 ### Question Three
 Question Three asked the following:
