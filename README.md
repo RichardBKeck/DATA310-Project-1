@@ -6,10 +6,11 @@ The project consisted of three programming assignments. In addition to the READM
 ### Question One
 Question One asked the following:
 ```markdown
-You're about to get on a plane to Boston. You want to know whether it is raining. You call 4 random friends of yours 
-who live there and ask each one independently, if it's raining. The first two of your friends have a 1/2 chance of 
-telling you the truth and, the other two have 1/4 chance of messing with you by lying. All 4 friends tell you that 
-"No" it isn't raining. What is the probability that it's raining in Boston?
+You're about to get on a plane to Boston. You want to know whether it is raining. You call 4 
+random friends of yours who live there and ask each one independently, if it's raining. The 
+first two of your friends have a 1/2 chance of telling you the truth and, the other two have 
+1/4 chance of messing with you by lying. All 4 friends tell you that "No" it isn't raining. 
+What is the probability that it's raining in Boston?
 ```
 This question gives you the following information:
 - Two of your friends have a 50% chance of lying to you and two of your friends have a 25% chance of lying to you. These friends will be called "Friend A" and "Friend B" respectively.
