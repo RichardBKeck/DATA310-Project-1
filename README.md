@@ -107,8 +107,8 @@ def MadMax(trials):
       travel = (dist['ny-atl']+dist['atl-new']+dist['new-dal'])
       Atlanta_Dist += travel
     else:
-      travel2 = (dist['ny-atl']+dist['atl-stl']+dist['stl-dal'])
-      Atlanta_Dist += travel2
+      travel = (dist['ny-atl']+dist['atl-stl']+dist['stl-dal'])
+      Atlanta_Dist += travel
     Nashville_Choice = np.random.choice(WW_Nashville,replace=True)
     if Nashville_Choice == 'St. Louis':
       travel = (dist['ny-nas']+dist['nas-new']+dist['new-dal'])
