@@ -195,7 +195,7 @@ import matplotlib.pyplot as plt
 ax1 = sns.histplot(values,
                   kde=False,
                   color='lightpink')
-ax1.set(xlabel='Normal', ylabel='Frequency')
+ax1.set(xlabel='Distribution', ylabel='Frequency')
 plt.show()
 
 #Generate the Distributional Plot
@@ -206,7 +206,7 @@ ax2 = sns.distplot(values,
                   hist_kws={"color":'lightpink'},
                   fit=stats.norm,
                   fit_kws={"color":'deepskyblue'})
-ax2.set(xlabel='Normal', ylabel='Frequency')
+ax2.set(xlabel='Distribution', ylabel='Frequency')
 plt.show()
 
 #Generate the Quantile-Quantile plots
@@ -235,21 +235,21 @@ Running this code results in similar graphs to the following:
 
 ***Histogram***
 
-![image](https://user-images.githubusercontent.com/109169036/178856024-c82d2b9e-800f-4754-929b-87536fea255a.png)
+![image](https://user-images.githubusercontent.com/109169036/178867535-a418eebc-15f7-4ef5-a15e-bf0e67ff3042.png)
 
 ***Distributional Plot***
 
-![image](https://user-images.githubusercontent.com/109169036/178856062-108b3d4c-1c72-441b-9dee-ff8ae93e7b35.png)
+![image](https://user-images.githubusercontent.com/109169036/178867551-69f34325-14d6-492e-8c21-15721d2829db.png)
 
 ***Quantile-Quantile Plot***
 
-![image](https://user-images.githubusercontent.com/109169036/178856079-8dab4dca-85ae-4c94-a2ba-f935cc502227.png)
+![image](https://user-images.githubusercontent.com/109169036/178867575-979aafff-6881-45e7-b44d-e388707feff6.png)
 
 Applying to the Kolmogorov-Smirnov Test and the Anderson-Darling Test gave the following outputs:
 
 ```markdown
-Kolomogorov-Smirnov Test: KstestResult(statistic=0.0175595079941524, pvalue=0.9995123788566481)
-Anderson-Darling Test: AndersonResult(statistic=0.12092389381120938, critical_values=array([0.57 , 0.65 , 0.779, 0.909, 1.081]), significance_level=array([15. , 10. ,  5. ,  2.5,  1. ]))
+Kolomogorov-Smirnov Test: KstestResult(statistic=0.020731629909163107, pvalue=0.9940744869602796)
+Anderson-Darling Test: AndersonResult(statistic=0.18582589578375064, critical_values=array([0.57 , 0.65 , 0.779, 0.909, 1.081]), significance_level=array([15. , 10. ,  5. ,  2.5,  1. ]))
 ```
 
 As a whole, the plots and the results from the Kolomogorov-Smirnov Test and the Anderson-Darling Test strongly suggests that the means of random samples taken from a beta distribution are normally distributed.
